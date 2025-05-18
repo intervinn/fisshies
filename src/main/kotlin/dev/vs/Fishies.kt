@@ -1,5 +1,8 @@
 package dev.vs
 
+import dev.vs.blocks.BlockEntities
+import dev.vs.blocks.Blocks
+import dev.vs.items.Items
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
@@ -8,9 +11,8 @@ object Fishies : ModInitializer {
 	const val ID = "fishies"
 
 	override fun onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-		logger.info("Hello Fabric world!")
+		Items
+		Blocks
+		BlockEntities
 	}
 }

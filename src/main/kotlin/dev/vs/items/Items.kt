@@ -13,9 +13,9 @@ object Items {
     fun keyOf(name: String): RegistryKey<Item> =
         RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Fishies.ID, name))
 
-    fun register(name: String, factory: Function<Item.Settings, Item>, settings: Item.Settings): Item {
+    fun register(name: String, factory: (Item.Settings) -> Item, settings: Item.Settings): Item {
         val key = keyOf(name)
-        val item = factory.apply(settings)
+        val item = factory(settings)
         return Registry.register(Registries.ITEM, key, item)
     }
 

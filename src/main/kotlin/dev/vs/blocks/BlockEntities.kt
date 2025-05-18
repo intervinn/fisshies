@@ -1,4 +1,4 @@
-package dev.vs.blockentities
+package dev.vs.blocks
 
 import dev.vs.Fishies
 import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityTypeBuilder
@@ -8,6 +8,8 @@ import net.minecraft.block.entity.BlockEntityType
 import net.minecraft.registry.Registries
 import net.minecraft.registry.Registry
 import net.minecraft.util.Identifier
+import net.minecraft.util.math.BlockPos
+import net.minecraft.world.World
 
 object BlockEntities {
     fun <T> register(name: String, factory: FabricBlockEntityTypeBuilder.Factory<out T>, vararg blocks: Block): BlockEntityType<T> where T : BlockEntity =
@@ -16,4 +18,7 @@ object BlockEntities {
             Identifier.of(Fishies.ID, name),
             FabricBlockEntityTypeBuilder.create(factory, *blocks).build()
         )
+
+    val COUNTER = register("counter", ::CounterBlockEntity, Blocks.COUNTER)
+    val REDSTONE_EMITTER = register("redstone_emitter", ::RedstoneEmitterBlockEntity, Blocks.REDSTONE_EMITTER)
 }
