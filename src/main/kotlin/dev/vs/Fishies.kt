@@ -1,8 +1,9 @@
 package dev.vs
 
-import dev.vs.blocks.BlockEntities
-import dev.vs.blocks.Blocks
+import dev.vs.registry.BlockEntities
+import dev.vs.registry.Blocks
 import dev.vs.items.Items
+import dev.vs.registry.ScreenHandlers
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
@@ -14,5 +15,6 @@ object Fishies : ModInitializer {
 		Items
 		Blocks
 		BlockEntities
+		ScreenHandlers
 	}
 }
